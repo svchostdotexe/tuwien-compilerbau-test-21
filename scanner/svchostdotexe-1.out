@@ -1,7 +1,9 @@
 var
 id kwgts
 ;
-num 32
+id kwgts
+=
+num 31
 ;
 id x
 :=

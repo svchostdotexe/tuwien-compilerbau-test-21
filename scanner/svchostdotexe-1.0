@@ -1,5 +1,5 @@
 var kwgts;
-num 1fh;
+kwgts = 1fH;
 /* achtung kommentar */
 x:=5;
 end;
