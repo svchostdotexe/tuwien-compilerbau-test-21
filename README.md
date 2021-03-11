@@ -2,7 +2,8 @@
 
 Kooperative Sammlung von Testfällen für die LVA "Übersetzerbau" der TU Wien im SS21.
 
-Bitte beachtet, dass dies eine kooperative Sammlung sein sollte. Ein einzelner Testfall ist schnell geschrieben und hilft allen weiter.
+Bitte beachtet, dass dies eine kooperative Sammlung sein soll. Ein einzelner Testfall ist schnell geschrieben und
+hilft allen weiter.
 
 ## Kurze Anleitung für g0:
 
@@ -30,3 +31,9 @@ Das Testskript selbst wird von der LVA-Leitung zur Verfuegung gestellt:
 > Falls sie das Skript für eigene Modifikationen kopieren, beachten Sie, dass sie es nicht mit "test" aufrufen koennen, aber z.B. mit "./test" geht es; in der Shell gibt es einen eingebauten Befehl "test".
 >
 > Auch wenn Sie Ihr Programm zu Hause schon getestet haben, sollten Sie die Tests auf jeden Fall auf unseren Übungsservern wiederholen, um Fehler bei der Übertragung abzufangen.
+
+## Zusätzliche Namenskonvention
+
+Bitte Testdaten mit Username/Pseudonym versehen, damit es keine Konflikte gibt.
+> {name}-{nummer}.{type}  
+> svchostdotexe-1.out
