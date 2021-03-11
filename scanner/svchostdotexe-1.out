@@ -1,0 +1,11 @@
+var
+id kwgts
+;
+num 32
+;
+id x
+:=
+num 5
+;
+end
+;
