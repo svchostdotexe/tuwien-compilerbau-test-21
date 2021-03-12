@@ -1,0 +1,11 @@
+method
+id f
+(
+)
+var
+id m
+:=
+num 16
+;
+end
+;
