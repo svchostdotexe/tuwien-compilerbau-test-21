@@ -45,6 +45,7 @@ do
         fprintf(stdout, \"\n[✅] Testcase ${arrIN[1]} succeeded.\n\"); 
     } else { 
         fprintf(stdout, \"\n[❌] Testcase ${arrIN[1]} failed! Number of tests failed: %d.\n\",errorsTestCase${FUNCTIONCOUNTER}); 
+        exit(1);
     }"
 
     echo "[✅] Function call for ${fileName} generated successfully!"
