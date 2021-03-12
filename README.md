@@ -7,7 +7,7 @@ hilft allen weiter.
 
 ## Kurze Anleitung für g0:
 
-	$ git clone git://github.com/lewurm/testub10.git ~/test
+	$ git clone git://github.com/svchostdotexe/tuwien-compilerbau-test-21.git ~/test
 
 Danach koennen die Testfaelle durch diesen Befehl aktualisiert werden:
 
