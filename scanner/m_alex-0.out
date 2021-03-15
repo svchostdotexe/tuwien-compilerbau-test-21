@@ -1,0 +1,64 @@
+class
+id myClass
+implements
+interface
+id myInterface
+method
+id iamMethod
+(
+int
+id param1
+,
+int
+id param2
+)
+var
+id valueA
+:=
+num 99
+;
+var
+id valueB
+:=
+num 170
+;
+var
+id calculatedValue
+;
+while
+id calculatedValue
+<
+num 4095
+do
+if
+not
+id STATIC_BOOLEAN
+then
+id calculatedValue
+=
+id valueA
+*
+id valueB
+;
+else
+id calculatedValue
+=
+id valueA
+-
+id valueB
+;
+end
+end
+return
+new
+id MySecondClass
+(
+id calculatedValue
+)
+.
+id generateOutput
+(
+)
+;
+end
+end

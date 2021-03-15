@@ -1,0 +1,17 @@
+class myClass implements interface myInterface
+
+    /* this is a beautiful comment */
+    method iamMethod(int param1, int param2)
+        var valueA := 99;
+        var valueB := 0AAH;
+        var calculatedValue;
+        while calculatedValue < 0FFFH do
+            if not STATIC_BOOLEAN then
+                calculatedValue = valueA * valueB;
+            else
+                calculatedValue = valueA - valueB;
+            end
+        end
+        return new MySecondClass(calculatedValue).generateOutput();
+    end
+end
