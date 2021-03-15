@@ -1,0 +1,22 @@
+interface myInterface2:
+    abc(int): int
+end;
+
+interface myInterface1:
+    test(int, int): int
+end;
+
+class myClass1 implements myInterface1:
+    method test(a:int, b:int)
+        if((a+b) < 0FFH) then
+            return not (a < b);
+        else
+            while((a+b) < 0FFH) do
+                a := a - 1;
+                b := (a - b) * 2;
+            end;
+        end;
+        var c:int := (a * b) + (a-b);
+        return null c;
+    end;
+end;
