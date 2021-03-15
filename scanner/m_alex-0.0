@@ -6,7 +6,7 @@ class myClass implements interface myInterface
         var valueB := 0AAH;
         var calculatedValue;
         while calculatedValue < 0FFFH do
-            if not STATIC_BOOLEAN then
+            if not STATICBOOLEAN then
                 calculatedValue = valueA * valueB;
             else
                 calculatedValue = valueA - valueB;
