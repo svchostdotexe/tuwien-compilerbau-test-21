@@ -32,7 +32,7 @@ num 4095
 do
 if
 not
-id STATIC_BOOLEAN
+id STATICBOOLEAN
 then
 id calculatedValue
 =
