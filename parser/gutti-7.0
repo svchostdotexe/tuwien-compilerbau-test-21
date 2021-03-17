@@ -1,0 +1,7 @@
+class methodenAufruf implements foo bar:
+    method fehlerlos()
+        var callee : int := new Double;
+        callee.beispielMethode(5392, fooX, this, null zett);
+        end;
+    end;
+
