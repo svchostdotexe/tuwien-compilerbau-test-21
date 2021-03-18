@@ -1,0 +1,21 @@
+class ifTest implements notIfTest:
+    var googo: int;
+    method ifCrash (ge: go, go: ge, ku: kuck)
+        if not ((23423*110) < (asdf and fdsa) ) then
+            while ge and go do 
+                x := 423+234;
+                end;
+        else
+            new foo;
+            end;
+        return ku < ge;
+        end;
+    end;
+
+interface kuck:
+    seh ( int, ifTest, int): double
+    siehst (grucks, mit, den, Tests): fos
+    ohneArgs (): void
+    end;
+
+
