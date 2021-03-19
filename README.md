@@ -38,6 +38,19 @@ Bitte Testdaten mit Username/Pseudonym versehen, damit es keine Konflikte gibt.
 > {name}-{nummer}.{type}  
 > svchostdotexe-1.out
 
+# ASMB Benchmark Tool
+
+Das Benchmarktool wurde aus den Vorjahren übernommen und angepasst.  
+Credits: mr. ubvl  
+
+Instructions:  
+1. pull repo
+2.      $ ./test.sh
+3. Poste deinen Instructioncount ins Forum/Discord/Mattermost.  
+
+Das Benchmarktool überprüft nicht die Korrektheit des Programms! Stellt das selbst via LVA-Testprogramm sicher.
+
+
 # ASMA Testcase generator
 
 ## WARNING
