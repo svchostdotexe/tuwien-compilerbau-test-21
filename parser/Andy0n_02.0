@@ -4,6 +4,7 @@ end;
 
 interface myInterface1:
     test(int, int): int
+    test2(int, int, huch): int
 end;
 
 class myClass1 implements myInterface1:
