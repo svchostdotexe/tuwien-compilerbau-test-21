@@ -1,0 +1,26 @@
+class
+id MyClass
+implements
+interface
+id MyInterface
+(
+id HexA
+:=
+num 140
++
+num 5
+;
+)
+class
+id MyFaultyClass
+id impements
+interface
+id NoInterface
+(
+id end39
+num 39
+end
+)
+id End
+num 28
+id CH

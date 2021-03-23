@@ -1,0 +1,62 @@
+interface
+id Interface1
+:
+id init
+(
+)
+:
+int
+id add3
+(
+int
+,
+int
+,
+int
+)
+:
+int
+end
+interface
+id Interface2
+:
+id init
+(
+)
+:
+int
+id add2
+(
+int
+,
+int
+)
+:
+int
+end
+class
+id Class1
+implements
+:
+var
+id var1
+:
+int
+;
+var
+id var2
+:
+int
+;
+method
+id mul2
+(
+id in1
+:
+int
+,
+id in2
+:
+int
+)
+end
