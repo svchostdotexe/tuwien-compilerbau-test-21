@@ -1,0 +1,21 @@
+class MyClass implements /* Das ist ein einzeiliger Kommentar */ interface MyInterface (
+	HexA := 8cH + 5;
+	/* Das ist ein einzeiliger Kommentar */
+)
+
+class /* Das ist ein einzeiliger Kommentar */ MyFaultyClass impements interface NoInterface (
+	end39
+	39end
+)
+
+End /* Das sollte kein Keyword sein */
+
+1CH
+CH /* Das sollte keine Hexzahl sein */
+
+/* Das ist ein einzeiliger Kommentar */
+/*
+	Das ist ein 
+	mehrzeiliger Kommentar
+*/
+

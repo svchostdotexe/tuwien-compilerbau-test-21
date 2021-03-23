@@ -1,0 +1,9 @@
+class MyClass implements /* Das ist ein einzeiliger* Kommentar */ interface MyInterface (
+	HexA := A8cH + 5;
+	/* Das ist ein einzeiliger Kommentar */
+)
+/*
+	Das ist ein 
+	mehrzeiliger Kommentar
+***asdasd*/
+

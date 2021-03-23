@@ -1,0 +1,17 @@
+/* Das ist ein Test */
+interface Interface1 : 
+	init():int
+	add3(int, int, int) : int
+end
+
+interface Interface2 : 
+	init():int
+	add2(int, int) : int
+end
+
+class Class1 implements /* nothing */ :
+	var var1 : int;
+	var var2 : int;
+	method mul2(in1: int, in2: int)
+		/* Stats */
+	end

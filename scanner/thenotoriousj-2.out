@@ -1,0 +1,13 @@
+class
+id MyClass
+implements
+interface
+id MyInterface
+(
+id HexA
+:=
+id A8cH
++
+num 5
+;
+)
