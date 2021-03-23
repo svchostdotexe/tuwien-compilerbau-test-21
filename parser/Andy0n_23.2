@@ -1,0 +1,9 @@
+class failClass implements:
+    method rEuclid(a:int, b:int)
+        if b = 0 then
+            return a;
+        else
+            return this.rEuclid(b, modulo(a, b)); /* FAIL */
+        end;
+    end;
+end;
