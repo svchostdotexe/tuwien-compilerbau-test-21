@@ -1,0 +1,27 @@
+class id implements:
+method id(id:id)
+a;
+not a;
+not not a;
+a+a;
+a+a+a;
+a*a;
+a*a*a;
+a and a;
+a and a and a;
+a=a;
+a<a;
+a-a;
+new a;
+55;
+0fH;
+0FFH;
+055H;
+01H;
+this;
+null a;
+a;
+a.a();
+a.a(a);
+a.a(a,a);
+end;end;
