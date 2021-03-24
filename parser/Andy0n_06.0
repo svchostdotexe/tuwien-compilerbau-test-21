@@ -1,0 +1,11 @@
+class myClass1 implements myInterface1:
+    method test(a:int, b:int)
+        a+a+a;
+        b*b*b;
+        c*(c+c);
+        a*(a+(a*(a+(a*(a+(a*(a+(a and(a and(b*(a-(b*(g<(h=(u+b)))))))))))))));
+        return new abc;
+        abd:=a*(a+(a*(a+a+(a*a*(a+(a*(a+(a and(a and(b*(a-(b*(g<(h=(u+b)))))))))))))));
+        0FFH.halleluja(abc, null asd, sss, 055H, 55, this);
+    end;
+end;
