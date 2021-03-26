@@ -1,0 +1,19 @@
+interface test:
+test():test
+end;
+
+interface test:
+test(abc):test
+end;
+
+interface test:
+test(abc, cds):test
+end;
+
+interface test:
+test():int
+end;
+
+interface test:
+test(int):int
+end;
