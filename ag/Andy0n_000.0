@@ -1,0 +1,44 @@
+interface euclid:
+    iEuclid(int, int): int
+    rEuclid(int, int): int
+end;
+
+interface math:
+    modulo(int, int): int
+end;
+
+class myClass implements euclid math:
+    /**
+     * Iterativer Euklischer Algorithmus.
+     */
+    method iEuclid(a:int, b:int)
+        while not (b = 0) do
+            var h:int := this.modulo(a, b);
+            a := b;
+            b := h;
+        end;
+        return a;
+    end;
+
+    /**
+     * Rekursiver Euklischer Algorithmus.
+     */
+    method rEuclid(a:int, b:int)
+        if b = 0 then
+            return a;
+        else
+            return this.rEuclid(b, this.modulo(a, b));
+        end;
+    end;
+
+    /**
+     * a modulo b
+     */
+    method modulo(a:int, b:int)
+        while 0 < a do
+            a := a - b;
+        end;
+
+        return a + b;
+    end;
+end;
