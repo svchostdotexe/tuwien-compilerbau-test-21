@@ -1,0 +1,51 @@
+interface LinkedList:
+    add(Object): int
+    get(int): Object
+    size(): int
+end;
+
+class MyLinkedList implements LinkedList:
+    var next:LinkedList;
+    var head:Object;    /* FAIL */
+
+    method add(o:Object)
+        if head = null LinkedList then /* Absolut keine Ahnung ob das mit null so funken wird, aber ist momentan korrekt */
+            head := o;
+            return 0;
+        else 
+            if head.getId() = o.getId() then
+                return 1;
+            else
+                if next = null LinkedList then
+                    next := new MyLinkedList;
+                end;
+            end;
+        end;
+
+        return next.add(o);
+    end;
+
+    method get(i:int)
+        if i = 0 then
+            return head;
+        else
+            if next = null LinkedList then
+                return null Object;
+            end;
+        end;
+
+        return next.get(i-1);
+    end;
+
+    method size()
+        if head = null Object then
+            return 0;
+        end;
+        
+        if next = null Object then
+            return 1;
+        end;
+
+        return 1 + next.size();
+    end;
+end;
