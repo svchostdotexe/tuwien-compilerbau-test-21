@@ -1,0 +1,25 @@
+interface a:
+    b():int
+    c():int
+end;
+interface d:end;
+interface e:
+    f():a
+    g():d
+    h(d):e
+end;
+
+class i implements a d e:
+    var j:d;
+end;
+class j implements:end;
+class k implements e:
+    var l:e;
+    method f()end;
+    method g(m:d)
+        var n:d :=m;
+        m := 12;
+        n := 5H * (m+n);
+        return l and m and n;
+    end;
+end;
