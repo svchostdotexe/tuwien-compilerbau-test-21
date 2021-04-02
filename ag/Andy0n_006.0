@@ -1,0 +1,19 @@
+interface a:
+    b(int,a):a
+end;
+
+class c implements a:
+    var d:a;
+
+    method b(e:int, f:a)
+        d;
+        var g:a:=d;
+        g:=g;
+        new c;
+        null a;
+        g;
+        e;
+        f;
+        d.b(e,f);
+    end;
+end;

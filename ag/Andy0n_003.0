@@ -1,0 +1,12 @@
+interface myInterface:
+    testMethod(): int
+end;
+
+class MyClass implements myInterface:
+    var global:int;
+
+    method testMethod()
+        global := new MyClass;
+        return global;
+    end;
+end;

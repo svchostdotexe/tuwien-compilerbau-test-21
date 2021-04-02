@@ -1,0 +1,162 @@
+interface
+id euclid
+:
+id iEuclid
+(
+int
+,
+int
+)
+:
+int
+id rEuclid
+(
+int
+,
+int
+)
+:
+int
+end
+;
+interface
+id math
+:
+id modulo
+(
+int
+,
+int
+)
+:
+int
+end
+;
+class
+id myClass
+implements
+id euclid
+id math
+:
+method
+id iEuclid
+(
+id a
+:
+int
+,
+id b
+:
+int
+)
+while
+not
+(
+id b
+=
+num 0
+)
+do
+var
+id h
+:
+int
+:=
+this
+.
+id modulo
+(
+id a
+,
+id b
+)
+;
+id a
+:=
+id b
+;
+id b
+:=
+id h
+;
+end
+;
+return
+id a
+;
+end
+;
+method
+id rEuclid
+(
+id a
+:
+int
+,
+id b
+:
+int
+)
+if
+id b
+=
+num 0
+then
+return
+id a
+;
+else
+return
+this
+.
+id rEuclid
+(
+id b
+,
+this
+.
+id modulo
+(
+id a
+,
+id b
+)
+)
+;
+end
+;
+end
+;
+method
+id modulo
+(
+id a
+:
+int
+,
+id b
+:
+int
+)
+while
+num 0
+<
+id a
+do
+id a
+:=
+id a
+-
+id b
+;
+end
+;
+return
+id a
++
+id b
+;
+end
+;
+end
+;
