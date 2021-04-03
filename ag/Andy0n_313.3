@@ -1,0 +1,8 @@
+interface a:
+    b():int
+end;
+
+class c implements a:
+    method b()end;
+    method b()end; /* FAIL */
+end;
