@@ -1,0 +1,17 @@
+interface Test:
+    function(int,int,Test):Test
+end;
+
+class Failing implements Test:
+    method function(x:int, y:int, z:Test)
+        if x = y then
+            z.function(x,y,z);
+            return new Failing;
+        else
+            return failVariable;
+        end;
+    end;
+
+    var failVariable: Test;
+end;
+
