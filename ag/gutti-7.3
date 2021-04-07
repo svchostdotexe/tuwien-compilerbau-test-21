@@ -1,0 +1,22 @@
+interface Fail:
+    methode(int,Fail): int
+    funktion(Fail,Fail,Fail): int
+end;
+
+class Failed implements Fail:
+    method methode(x: int, y: Fail) 
+        x+y;
+        while this do
+            x := null Fail;
+        end;
+    end;
+
+    method hilfsFail()
+    end;
+
+    method funktion(x: Fail, y: Fail, z: Fail)
+        x*y*z;
+        return y*x*z;
+    end;
+
+end;
