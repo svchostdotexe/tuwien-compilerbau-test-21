@@ -1,0 +1,42 @@
+interface t:
+    a27():t
+end;
+class hello2 implements:
+    var bobbi: t;
+    var bobbi2: t;
+    var number1: int;
+    method a27(valid: t)
+        if bobbi < bobbi2
+        then
+            bobbi := 123;
+        end;
+    end;
+    var katzi: int;
+    var valid: t;
+end;
+class hello implements:
+    var bobbi: t;
+    var bobbi2: t;
+    var number1: int;
+    method a27(valid: t)
+        if bobbi < bobbi2
+        then
+            bobbi := 123;
+        end;
+    end;
+    var katzi: int;
+    var valid: t;
+end;
+class hello3 implements:
+    var bobbi: t;
+    var bobbi2: t;
+    var number1: int;
+    method a27(valid: t)
+        if bobbi < bobbi2
+        then
+            bobbi := 123;
+        end;
+    end;
+    var katzi: int;
+    var valid: t;
+end;
