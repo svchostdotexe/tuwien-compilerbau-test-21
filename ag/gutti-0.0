@@ -1,0 +1,58 @@
+interface Foo:
+    map(int,Foo,int): Foo
+    array(int): int
+    fad(Foo): Foo
+    ist(): int
+    Test(int,int,int,Foo,Foo): Foo
+    schreiben(int): int
+end;
+
+interface Bar:
+    construct(Bar, Foo, int): Bar
+    g(Bar, Foo, Bar): int
+end;
+
+class FooBarImpl implements Foo Bar:
+    method map(x: int, y: Foo, z: int)
+        if( not not not x) then
+            var result : int := 4;
+            return result+result;
+        else
+            var result : int := 5;
+            return result-result;
+        end;
+    end;
+
+    method array(x: int)
+        var y : int := 42;
+        x := x + (y * 30);
+        return x;
+    end;
+
+    method fad(foo: Foo) 
+        var bar:Bar := new FooBarImpl;
+        while(bar < (0+bar) ) do
+            bar := bar - 1;
+            this;
+            bar.g(30,30);
+        end;
+        return bar;
+    end;
+    
+    method Test(h:int, f:Bar)
+        var x:Foo := f;
+        (x+f)*(h-f);
+        return f;
+    end;
+
+    method schreiben(h: int, f:Bar, x:Foo)
+        new FooBarImpl;
+        null Foo;
+        null Bar;
+        h;
+        null Bar.schreiben(h,f,x);
+        65.Test(h,f);
+        return not (65+42+(43-32)).construct(7,3);
+        end;
+
+end;

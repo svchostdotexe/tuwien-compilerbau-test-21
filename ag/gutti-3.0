@@ -1,0 +1,27 @@
+class Nix implements:
+    var esGibtNix: int;
+    var auchKeineMethode: int;
+    var auchKeineTypen: int;
+end;
+
+interface NeueMethoden:
+    erste(NeueMethoden,int):NeueMethoden
+    zweite(NeueMethoden,NeueMethoden):int
+end;
+
+class Zwei implements NeueMethoden:
+    var esGibtWas: NeueMethoden;
+    var nochWas: int;
+
+    method erste(x:NeueMethoden, y:int)
+        esGibtWas.erste(null NeueMethoden, not (new Nix));
+        var drei: NeueMethoden := 42;
+        return drei;
+    end;
+
+    method zweite(x:NeueMethoden, y:NeueMethoden) if not this then 42; else x; end;
+        ((((new Zwei))));
+    end;
+
+end;
+

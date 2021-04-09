@@ -1,0 +1,26 @@
+interface Node:
+    next(): Node
+    info(): int
+end;
+
+class ListNode implements Node:
+    var n: Node;
+    var p: Node;
+    var i: int;
+
+    method next()
+        var last : Node := new ListNode;
+        while not (last = null Node) do
+            last := last.next();
+            i := last.info() + i;
+        end;
+
+        if i = p.info() then
+            new ListNode;
+            p := new ListNode;
+            var x: Node := new ListNode;
+        end;
+
+        return p;
+    end;
+end;
