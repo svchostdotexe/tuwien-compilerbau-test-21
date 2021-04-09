@@ -1,0 +1,9 @@
+interface i:
+    a():int
+end;
+class x implements:
+    var hallo: int;
+    method a()
+        hallo := 3;
+    end;
+end;
