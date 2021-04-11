@@ -1,0 +1,8 @@
+interface a:
+    b(int, int):int
+end;
+class hello implements a:
+    method b()
+        this.a(); /* FAIL */
+    end;
+end;
