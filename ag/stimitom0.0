@@ -1,0 +1,14 @@
+interface Interf1:
+    initialize(): int
+    add5(): int
+end;
+
+class Somename implements Interf1 :
+    var count : int;
+    method initialize()
+        count := 15;
+    end;
+    method add5()
+        count := count + 5;
+    end;
+end;
