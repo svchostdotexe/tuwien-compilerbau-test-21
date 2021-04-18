@@ -1,0 +1,10 @@
+interface Interf1:
+    someMethod(int, int, int): int
+    testCall(int): int
+end;
+
+class Somename implements Interf1 :
+    method testCall(par : int)
+        this.someMethod(this, this , this);
+    end;
+end;
