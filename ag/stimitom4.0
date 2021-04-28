@@ -1,0 +1,11 @@
+interface Interf1:
+    testOperators(): int
+end;
+
+class Somename implements Interf1 :
+    method testOperators()
+        this and this and this;
+        this + this + this;
+        this < (not this); 
+    end;
+end;

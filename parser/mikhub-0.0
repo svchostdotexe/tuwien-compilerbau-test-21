@@ -1,0 +1,71 @@
+/* sollte jeden punkt der grammatik zumindest einmal abdecken */
+
+interface I1:
+    m1(int, int) : int
+end;
+
+interface I2:
+    m2(): int
+end;
+
+interface I3:
+    m3(I2): int
+end;
+
+class C1 implements I1:
+    var v1: int;
+    var v2: int;
+    var v3: I1;
+    var v4: int;
+
+    var c2: C2;
+
+    method m1(p1:int,p2:int)
+        var t1: int := p1;
+
+        if t1<v1 then
+            v1:=p1;
+        end;
+
+        if not (p2<v2) then
+            v2:=c2.m1();
+        else
+            v2:=p2;
+        end;
+
+        return (v1-v2);
+    end;
+
+    method main()
+        while 1=1 do
+            v3 = this;
+        end;
+    end;
+
+    method test()
+        return (1+1+1)<(2*2*2);
+    end;
+
+    method create()
+        return new C2;
+    end;
+
+    method nuller()
+        v3:=null n1;
+        return c2.add(v1*v2,v4);
+    end;
+
+end;
+
+class C2 implements I2:
+    var v1: int;
+
+    method m2()
+        return v1;
+    end;
+
+    method add(n1:int,n2:int)
+        return n1+n2;
+    end;
+
+end;

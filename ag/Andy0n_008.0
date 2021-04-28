@@ -1,0 +1,7 @@
+interface a:
+    b(): int
+end;
+
+class x implements:
+    method b()end;
+end;

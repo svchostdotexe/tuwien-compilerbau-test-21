@@ -1,0 +1,14 @@
+interface a:
+    b():int
+end;
+
+class c implements a:
+    method b()end;
+    method b()end; /* FAIL */
+    /* KOMMENTAR:
+     * Logisch wäre es, wenn es beim FAIL failen würde. 
+     * Der Implementierung der Angabe zufolge sollte
+     * dies hier jedoch nicht failen, da das nicht 
+     * überprüft werden soll.
+     */
+end;

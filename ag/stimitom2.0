@@ -1,0 +1,22 @@
+
+interface Interf0:
+end;
+
+interface Interf1:
+    initialize(): int
+    test(): int
+end;
+
+class Class1 implements Interf0:
+end;
+
+class Somename implements Interf1 :
+    method test()
+        var three: int := 3;
+        if(not three) then 
+            return three;
+        else 
+            return new Class1;
+        end;
+    end;
+end;
