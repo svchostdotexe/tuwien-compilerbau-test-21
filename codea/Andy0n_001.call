@@ -1,0 +1,2 @@
+extern long c_b(long, long, long);
+RET(c_b(0,5,5)==50);
