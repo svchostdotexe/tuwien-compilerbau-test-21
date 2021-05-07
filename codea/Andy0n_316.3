@@ -1,0 +1,12 @@
+interface a:
+    b(int, int):a
+    d(int, int):a
+end;
+
+class c implements a:
+    var d:a;
+
+    method b(e:int, f:int)
+        return 5 * (e + f);
+    end;
+end;

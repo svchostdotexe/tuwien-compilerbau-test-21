@@ -1,0 +1,13 @@
+interface myInterface:
+    myMethod(int,myInterface):myInterface
+end;
+
+class myClass implements myInterface:
+    method myMethod(par1:int, par2:myInterface)
+        if 0 = 1 then
+            var fail : int := 0;
+        else
+            return this.myMethod(fail, par2); /* FAIL */
+        end;
+    end;
+end;
