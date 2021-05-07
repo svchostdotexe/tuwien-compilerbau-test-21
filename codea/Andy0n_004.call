@@ -1,0 +1,21 @@
+struct objectc { struct vft *vftc; };
+
+extern struct ct { 
+    long (*f)(struct objectc*, long, long, long);
+    long (*g)(struct objectc*, long, long, long);
+} myClass1;
+
+#define F(o, x,y,z) ((x*x) + (y*y) + (z*z))
+#define G(o, x,y,z) ((x+y+z) * (x-y) * (y-z) * (z-x))
+
+RET(
+    myClass1.f(0, 0, 0, 0) == F(0, 0, 0, 0)  &&
+    myClass1.f(0, 1, 2,3 ) == F(0, 1, 2, 3)  &&
+    myClass1.f(0, -2147483648l,-2147483648l,-2147483648l) == F(0, -2147483648l,-2147483648l,-2147483648l)  &&
+    myClass1.f(0, 2147483647l, 2147483647l, 2147483647l) == F(0, 2147483647l, 2147483647l, 2147483647l) &&
+
+    myClass1.g(0, 0, 0, 0) == G(0, 0, 0, 0) &&
+    myClass1.g(0, 1, 2, 3) == G(0, 1, 2, 3) &&
+    myClass1.g(0,-2147483648l,-2147483648l,-2147483648l) == G(0,-2147483648l,-2147483648l,-2147483648l) &&
+    myClass1.g(0, 2147483647l, 2147483647l, 2147483647l) == G(0, 2147483647l, 2147483647l, 2147483647l)
+);
