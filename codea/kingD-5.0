@@ -1,0 +1,8 @@
+interface i: 
+    f(int,int):int 
+end;
+class c implements i:
+    method f(x:int,y:int) 
+        return x + y; 
+    end;
+end;
