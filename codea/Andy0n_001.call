@@ -5,7 +5,7 @@ struct ct {
 };
 
 extern struct ct myClass1;
-// a + b + a + b + (a * b + (a + b))
+// a + b + a + b + ((a * b) + a + b)
 RET(
     myClass1.f(0,10,2) == 10 + 2 + 10 + 2 + ((10 * 2) + 10 + 2) &&
     myClass1.f(0,0,2) == 0 + 2 + 0 + 2 + ((0 * 2) + 0 + 2) &&

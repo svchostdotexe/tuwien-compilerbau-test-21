@@ -1,0 +1,4 @@
+interface i: f():int end;
+class c implements i:
+ method f() return not this; end;
+end;

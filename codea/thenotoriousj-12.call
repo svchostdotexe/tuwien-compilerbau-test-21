@@ -1,0 +1,40 @@
+struct objectc { 
+	struct vft *vftc;
+};
+
+struct objectClass1 { 
+	struct vft *vftc;
+	long v1;
+	long v2;
+	struct objectc* var3;
+};
+
+struct objectClass2 { 
+	struct vft *vftc;
+};
+
+extern struct vft { 
+	long (*add2)(struct objectc *, long, long);
+	long (*calc1)(struct objectc *, long, long);
+	long (*calc2)(struct objectc *, long, long);
+	long (*calc3)(struct objectc *, long, long, long);
+} Class1;
+
+long a = 0xABCD;
+long b = 0xDEAD;
+long res2 = ((a * b) + (a + b)) + b + a + b + ((a * b) + (a + b));
+b = a;
+long res1 = ((a * b) + (a + b)) + b + a + b + ((a * b) + (a + b));
+b = 0xDEAD;
+
+RET(Class1.add2(0, 0xABCD, 0xDEAD) == (0xABCD + 0xDEAD) && Class1.add2(0, 0xABCD, 0xABCD) == 2*0xABCD && 
+	Class1.add2(0, 0, 0) == 0 && Class1.add2(0, 4, 2) == 6 &&
+	
+	Class1.calc1(0, 3, 4) == 49 && Class1.calc1(0, a, a) == res1 &&
+	Class1.calc1(0, 0, 0) == 0 && Class1.calc1(0, a, b) == res2 &&
+
+	Class1.calc2(0, 3, 4) == 11 && Class1.calc2(0, 4, 5) == 14 &&
+	Class1.calc2(0, 0, 0) == 0 && Class1.calc2(0, 2, -2) == 18 &&
+
+	Class1.calc3(0, 3, 4, 5) == 24 && Class1.calc3(0, 12, 5, 1) == 36 &&
+	Class1.calc3(0, 0, 0, 0) == 0 && Class1.calc3(0, 2, -2, 6) == 12);

@@ -1,0 +1,9 @@
+interface myInt:
+    f(int, int): int
+end;
+
+class myClass1 implements myInt:
+    method f(a: int, b: int)
+        return a+a+a+a+a;
+    end;
+end;

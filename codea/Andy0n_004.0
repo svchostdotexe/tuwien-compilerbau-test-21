@@ -1,0 +1,14 @@
+interface myInt1:
+    f(int, int, int): int
+    g(int, int, int): int
+end;
+
+class myClass1 implements myInt1:
+    method f(x: int, y: int, z: int)
+        return (x*x) + (y*y) + (z*z);
+    end;
+
+    method g(x: int, y: int, z: int)
+        return (x+y+z) * (x-y) * (y-z) * (z-x);
+    end;
+end;
