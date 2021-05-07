@@ -1,0 +1,17 @@
+interface a:
+    b():int
+end;
+
+class one implements a:
+    var v1:int;
+    method b()
+        v1 := 27;
+    end;
+end;
+
+class two implements a:
+    method b()
+        var x:a := new one;
+        return v1;
+    end;
+end;
