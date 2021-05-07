@@ -1,0 +1,21 @@
+interface Interface1:
+	add2(int, int) : int
+	calc1(int, int) : int
+	calc2(int, int) : int
+	calc3(int, int, int) : int
+end;
+
+class Class1 implements Interface1 :
+	method add2(in1: int, in2: int)
+		return in1+in2;
+	end;
+	method calc1(a: int, b: int)
+		return ((a * b) + (a + b)) + b + a + b + ((a * b) + (a + b));
+	end;
+	method calc2(a: int, b: int)
+		return ((a - b) * (a - b)) + b + a + b + (a - b);
+	end;
+	method calc3(a: int, b: int, c:int)
+		return a + b + c + (a + b + c);
+	end;
+end;

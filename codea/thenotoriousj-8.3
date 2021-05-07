@@ -1,0 +1,54 @@
+interface Interface1:
+	init():int
+	add3(int, int, int) : int
+end;
+
+interface Interface2: 
+	empty():int
+	single():int
+	add2(int, int) : int
+end;
+
+class Class1 implements /* nothing */ :
+	var var1 : int;
+	var var2 : int;
+end;
+
+class Class2 implements Interface1 Interface2 :
+	var var1 : int;
+	var var2 : int;
+	method init()
+		var zero : int := 0H;
+		var1 := (zero);
+		var2 := zero;
+		return 0;
+	end;
+	method add2(in1: int, in2: int)
+		return in1+in2;
+	end;
+	method add3(in1: int, in2: int)
+		return in1 + this.add2(in2, in3);
+	end;
+	method empty()
+		/* Stats */
+	end;
+	method single()
+		return this;
+	end;
+	method fact(n : int)
+		if n < 0 then
+			return 0;
+		end;
+		
+		var fac : int := 1;
+		var i : int := n;
+		
+		while (0 < i) do
+			var i : int := 0;
+			fac := fac * i;
+		end;
+		
+		return fac;
+		
+	end;
+end;

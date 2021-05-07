@@ -1,0 +1,33 @@
+struct objectc {
+        struct vft *vftc;
+};
+
+struct objectClass1 {
+        struct vft *vftc;
+        long v1;
+        long v2;
+        struct objectc* var3;
+};
+
+struct objectClass2 {
+        struct vft *vftc;
+        long v1;
+        long v2;
+};
+
+extern struct vft {
+        long (*init)(struct objectc *);
+        long (*add2)(struct objectc *, long, long);
+        long (*add3)(struct objectc *, long, long, long);
+        long (*empty)(struct objectc *);
+        long (*single)(struct objectc *);
+        long (*getThis)(struct objectc *);
+        long (*ident)(struct objectc *, long);
+} Class1, Class2;
+
+RET(Class1.init(0) == 0 && Class1.init(-3)==0 && Class1.init(5)==0 &&
+		Class2.init(0) == 0 && Class2.init(-3)==0 && Class2.init(5)==0 &&
+		Class2.getThis(0) == 0 && Class2.getThis(-3)==-3 && Class2.getThis(5)==5 &&
+		Class2.ident(0,4) == 4 && Class2.ident(0,-1)==-1 && Class2.ident(0,5)==5 &&
+		Class2.add2(0,0,0) == 0 && Class2.add2(0,-3,3)==0 && Class2.add2(0,5,-5)==0 && Class2.add2(0,5,15)==20 &&
+		Class2.add3(0,0,0,0) == 0 && Class2.add3(0,-3,-3,6)==0 && Class2.add3(0,5,-5,1)==1 && Class2.add3(0,5,15,-10)==10);

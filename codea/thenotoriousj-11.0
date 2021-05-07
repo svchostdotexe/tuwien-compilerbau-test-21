@@ -1,0 +1,43 @@
+interface Interface1:
+	binaryOr(int, int): int
+	squareSum(int, int) : int
+	lessOrEqual(int, int) : int
+	determinant(int, int, int, int): int
+end;
+
+interface Interface2: 
+	offsetThisBy64(): int
+	getNull(): Interface1
+end;
+
+class Class1 implements Interface1 :
+	var var1 : int;
+	var var2 : int;
+	var var3 : Interface2;
+	
+	method binaryOr(a: int, b: int)
+		return not ((not a) and (not b));
+	end;
+	
+	method squareSum(a: int, b: int)
+		return (a*a)+(b*b);
+	end;
+	
+	method lessOrEqual(a: int, b: int)
+		return not ((not (a < b)) and (not (a = b)));
+	end;
+	
+	method determinant(a11: int, a12: int, a21: int, a22: int)
+		return (a11*a22)-(a12*a21);
+	end;
+end;
+
+class Class2 implements Interface2 :
+	method offsetThisBy64()
+		return this + 64;
+	end;
+	
+	method getNull()
+		return null Interface1;
+	end;
+end;
