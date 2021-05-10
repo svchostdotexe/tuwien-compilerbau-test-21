@@ -1,0 +1,11 @@
+struct objectc { 
+	struct vft *vftc;
+};
+
+extern struct vft { 
+	long (*fib)(struct objectc *, long);
+} Class1;
+
+RET(Class1.fib(0, 0) == 1 && Class1.fib(0, 1) == 1 && Class1.fib(0, 2) == 2 &&
+	Class1.fib(0, 3) == 3 && Class1.fib(0, 4) == 5 && Class1.fib(0, 5) == 8 &&
+	Class1.fib(0, 6) == 13 && Class1.fib(0, 20) == 10946 && Class1.fib(0, 40) == 165580141);

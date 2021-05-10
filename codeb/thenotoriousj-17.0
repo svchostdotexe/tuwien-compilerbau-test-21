@@ -1,0 +1,53 @@
+interface ICalc:
+	max1(int, int) : int
+	max2(int, int) : int
+	max3(int, int) : int
+	gcd(int, int) : int
+end;
+
+class Class1 implements ICalc :
+
+	method max1(a: int, b: int)
+		if a < b then
+			return b;
+		else
+			return a;
+		end;
+	end;
+	
+	method max2(a: int, b: int)
+		var max : int := 0;
+		if a < b then
+			max := b;
+		else 
+			max := a;
+		end;
+		
+		return max;
+	end;
+	
+	method max3(a: int, b: int)
+		var max : int := a;
+		if a < b then
+			max := b;
+		end;
+		
+		return max;
+	end;
+
+	method gcd(a: int, b: int)
+		if a = 0 then
+			return a;
+		end;
+			
+		while not (b = 0) do
+			if b < a then
+				a := a - b;
+			else
+				b := b - a;
+			end;
+		end;
+		
+		return a;
+	end;
+end;

@@ -1,0 +1,6 @@
+interface Interface1: 
+	empty():Interface1
+	single():int
+	add2(int, int) : int
+	fact(int, int) : int
+end;

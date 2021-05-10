@@ -1,0 +1,14 @@
+struct objectClass1 { 
+	struct vft *vftc;
+};
+
+extern struct vft { 
+	long (*nestedVariables)(struct objectc *, long, long);
+	long (*nestedControl)(struct objectc *, long, long);
+} Class1;
+
+RET(Class1.nestedVariables(0, -5, 6) == 7 && Class1.nestedVariables(0, 25, 13) == 101 && 
+	Class1.nestedVariables(0, 0, 0) == 0 && Class1.nestedVariables(0, 4, -8) == -4 &&
+	
+	Class1.nestedControl(0, 3, 4) == 1 && Class1.nestedControl(0, -1000, 1000) == 1 &&
+	Class1.nestedControl(0, 1000, -1000) == 1 && Class1.nestedControl(0, 1000, 1002) == 0);

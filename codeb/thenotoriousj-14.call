@@ -1,0 +1,25 @@
+struct objectc { 
+	struct vft *vftc;
+};
+
+struct objectClass1 { 
+	struct vft *vftc;
+	long lastN;
+	long lastResult;
+};
+
+extern struct vft { 
+	long (*bitcount)(struct objectc *, long);
+	long (*init)(struct objectc *);
+	long (*factorial)(struct objectc *, long);
+} Class1, Cacher;
+
+struct objectClass1 *cacher = (struct objectClass1 *)malloc(sizeof(struct objectClass1));
+cacher -> vftc = &Cacher;
+
+RET(Class1.bitcount(0, 0b101010) == 3 && Class1.bitcount(0, 0xFF) == 8 && 
+	Class1.bitcount(0, 0) == 0 && Class1.bitcount(0, 0xABCD) == 10 &&
+	
+	Cacher.init(cacher) == 0 && 
+	Cacher.factorial(cacher, -10) == 1 && Cacher.factorial(cacher, 10) == 3628800 &&
+	Cacher.factorial(cacher, 5) == 120 && Cacher.factorial(cacher, 5) == 120);
