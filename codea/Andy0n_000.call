@@ -1,0 +1,25 @@
+struct objectc { struct vft *vftc; };
+
+struct ct { 
+    int (*myMeth1)(struct objectc*, long, long);
+    int (*myMeth2)(struct objectc*, long, long);
+    int (*myMeth3)(struct objectc*, long, long);
+    int (*myMeth4)(struct objectc*, long, long);
+    int (*myMeth5)(struct objectc*, long, long);
+    int (*myMeth6)(struct objectc*, long, long);
+};
+
+extern struct ct myClass1;
+extern struct ct myClass2;
+extern struct ct myClass3;
+
+RET(
+    myClass1.myMeth1(0,6,0) == 0 && 
+    myClass1.myMeth1(0,-3,0)==-1 &&
+    myClass1.myMeth1(0,4,5)==-1 &&
+
+    myClass2.myMeth5(0, 5, 7)==60 &&
+
+    myClass3.myMeth5(0,0,0)==-1 &&
+    myClass3.myMeth6(0,0,5)==5
+);

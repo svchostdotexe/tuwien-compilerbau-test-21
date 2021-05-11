@@ -1,0 +1,3 @@
+struct objectc { struct vft *vftc; };
+extern struct vft { long (*f)(struct objectc *, long); } c;
+RET(c.f(0,2) == -1 && c.f(0,-1)==-1 && c.f(0,100) == 0);

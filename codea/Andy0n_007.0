@@ -1,0 +1,24 @@
+interface MultInt:
+    f(int, int): int
+    g(int, int): int
+    h(int, int): int
+    i(int, int): int
+end;
+
+class MultClass implements MultInt:
+    method f(a: int, b: int)
+        return (a+b)*(a+b);
+    end;
+
+    method g(a: int, b: int)
+        return (a+b)*a;
+    end;
+
+    method h(a: int, b: int)
+        return (a+b)*27;
+    end;
+
+    method i(a: int, b: int)
+        return 27*(a+b);
+    end;
+end;

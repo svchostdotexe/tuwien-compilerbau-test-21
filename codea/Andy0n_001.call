@@ -1,0 +1,14 @@
+struct objectc { struct vft *vftc; };
+
+struct ct { 
+    int (*f)(struct objectc*, long, long);
+};
+
+extern struct ct myClass1;
+// a + b + a + b + ((a * b) + a + b)
+RET(
+    myClass1.f(0,10,2) == 10 + 2 + 10 + 2 + ((10 * 2) + 10 + 2) &&
+    myClass1.f(0,0,2) == 0 + 2 + 0 + 2 + ((0 * 2) + 0 + 2) &&
+    myClass1.f(0,7,-7) == 7 + (-7) + 7 + (-7) + ((7 * (-7)) + 7 + (-7)) &&
+    myClass1.f(0,-1,2147483647) == -1 + 2147483647 + -1 + 2147483647 + ((-1 * 2147483647) + -1 + 2147483647)
+);

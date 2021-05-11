@@ -1,0 +1,4 @@
+interface i: f(int):int end;
+class c implements i:
+ method f(x:int) return 3 < x; end;
+end;

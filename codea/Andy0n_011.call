@@ -1,0 +1,78 @@
+struct objectc { 
+    struct vft *vftc;
+};
+
+extern struct ct { 
+    long (*f)(struct objectc*, long, long);
+    long (*g)(struct objectc*, long, long);
+    long (*h)(struct objectc*, long, long);
+    long (*i)(struct objectc*, long, long);
+    long (*j)(struct objectc*, long, long);
+    long (*k)(struct objectc*, long, long);
+    long (*l)(struct objectc*, long, long);
+    long (*m)(struct objectc*, long, long);
+} EqualsClass;
+
+#define F(o,a,b) (-1*((a+b)==(a+b)))
+#define G(o,a,b) (-1*((a+b)==a))
+#define H(o,a,b) (-1*((a+b)==27))
+#define I(o,a,b) (-1*(27==(a+b)))
+#define J(o,a,b) (-1*(a==b))
+#define K(o,a,b) (-1*(a==(a+b)))
+#define L(o,a,b) (-1*(27==a))
+#define M(o,a,b) (-1*(a==27))
+
+RET(
+    EqualsClass.f(0, 0l, 0l)                      == F(0, 0l, 0l) &&
+    EqualsClass.f(0, 2147483647l, 2147483647l)    == F(0, 2147483647l, 2147483647l) &&
+    EqualsClass.f(0, 2147483647l, -2147483648l)   == F(0, 2147483647l, -2147483648l) &&
+    EqualsClass.f(0, -2147483648l, 2147483647l)   == F(0, -2147483648l, 2147483647l) &&
+    EqualsClass.f(0, -2147483648l, -2147483648l)  == F(0, -2147483648l, -2147483648l) &&
+
+    EqualsClass.g(0, 0l, 0l)                      == G(0, 0l, 0l) &&
+    EqualsClass.g(0, 2147483647l, 2147483647l)    == G(0, 2147483647l, 2147483647l) &&
+    EqualsClass.g(0, 2147483647l, -2147483648l)   == G(0, 2147483647l, -2147483648l) &&
+    EqualsClass.g(0, -2147483648l, 2147483647l)   == G(0, -2147483648l, 2147483647l) &&
+    EqualsClass.g(0, -2147483648l, -2147483648l)  == G(0, -2147483648l, -2147483648l) &&
+
+    EqualsClass.h(0, 0l, 0l)                      == H(0, 0l, 0l) &&
+    EqualsClass.h(0, 2147483647l, 2147483647l)    == H(0, 2147483647l, 2147483647l) &&
+    EqualsClass.h(0, 2147483647l, -2147483648l)   == H(0, 2147483647l, -2147483648l) &&
+    EqualsClass.h(0, -2147483648l, 2147483647l)   == H(0, -2147483648l, 2147483647l) &&
+    EqualsClass.h(0, -2147483648l, -2147483648l)  == H(0, -2147483648l, -2147483648l) &&
+
+    EqualsClass.i(0, 0l, 0l)                      == I(0, 0l, 0l) &&
+    EqualsClass.i(0, 2147483647l, 2147483647l)    == I(0, 2147483647l, 2147483647l) &&
+    EqualsClass.i(0, 2147483647l, -2147483648l)   == I(0, 2147483647l, -2147483648l) &&
+    EqualsClass.i(0, -2147483648l, 2147483647l)   == I(0, -2147483648l, 2147483647l) &&
+    EqualsClass.i(0, -2147483648l, -2147483648l)  == I(0, -2147483648l, -2147483648l) &&
+
+
+    EqualsClass.j(0, 0l, 0l)                      == J(0, 0l, 0l) &&
+    EqualsClass.j(0, 2147483647l, 2147483647l)    == J(0, 2147483647l, 2147483647l) &&
+    EqualsClass.j(0, 2147483647l, -2147483648l)   == J(0, 2147483647l, -2147483648l) &&
+    EqualsClass.j(0, -2147483648l, 2147483647l)   == J(0, -2147483648l, 2147483647l) &&
+    EqualsClass.j(0, -2147483648l, -2147483648l)  == J(0, -2147483648l, -2147483648l) &&
+
+    EqualsClass.k(0, 0l, 0l)                      == K(0, 0l, 0l) &&
+    EqualsClass.k(0, 2147483647l, 2147483647l)    == K(0, 2147483647l, 2147483647l) &&
+    EqualsClass.k(0, 2147483647l, -2147483648l)   == K(0, 2147483647l, -2147483648l) &&
+    EqualsClass.k(0, -2147483648l, 2147483647l)   == K(0, -2147483648l, 2147483647l) &&
+    EqualsClass.k(0, -2147483648l, -2147483648l)  == K(0, -2147483648l, -2147483648l) &&
+
+    EqualsClass.l(0, 0l, 0l)                      == L(0, 0l, 0l) &&
+    EqualsClass.l(0, 2147483647l, 2147483647l)    == L(0, 2147483647l, 2147483647l) &&
+    EqualsClass.l(0, 2147483647l, -2147483648l)   == L(0, 2147483647l, -2147483648l) &&
+    EqualsClass.l(0, -2147483648l, 2147483647l)   == L(0, -2147483648l, 2147483647l) &&
+    EqualsClass.l(0, -2147483648l, -2147483648l)  == L(0, -2147483648l, -2147483648l) &&
+    EqualsClass.l(0, 27l, -2147483648l)           == L(0, 27l, -2147483648l) &&
+    EqualsClass.l(0, 0, 27l)                      == L(0, 0, 27l) &&
+
+    EqualsClass.m(0, 0l, 0l)                      == M(0, 0l, 0l) &&
+    EqualsClass.m(0, 2147483647l, 2147483647l)    == M(0, 2147483647l, 2147483647l) &&
+    EqualsClass.m(0, 2147483647l, -2147483648l)   == M(0, 2147483647l, -2147483648l) &&
+    EqualsClass.m(0, -2147483648l, 2147483647l)   == M(0, -2147483648l, 2147483647l) &&
+    EqualsClass.m(0, -2147483648l, -2147483648l)  == M(0, -2147483648l, -2147483648l) &&
+    EqualsClass.m(0, 27l, -2147483648l)           == M(0, 27l, -2147483648l) &&
+    EqualsClass.m(0, 0, 27l)                      == M(0, 0, 27l)
+);

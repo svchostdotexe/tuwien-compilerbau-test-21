@@ -1,0 +1,57 @@
+interface myInt1:
+    myMeth1(int, int):int
+    myMeth2(int, int):int
+    myMeth3(int, int):int
+end;
+
+interface myInt2:
+    myMeth4(int, int):int
+    myMeth5(int, int):int
+    myMeth6(int, int):int
+end;
+
+class myClass1 implements myInt1:
+    method myMeth1(a: int, b: int)
+        return a < 5;
+    end;
+
+    method myMeth2(a: int, b: int)
+        return 5 < a;
+    end;
+
+    method myMeth3(a: int, b: int)
+        return 5 = a;
+    end;
+end;
+
+class myClass2 implements myInt2:
+    var x:int;
+    var y:int;
+    var z:int;
+
+    method myMeth4(e:int, f:int)
+        return 5 * (e + f);
+    end;
+
+    method myMeth5(e:int, f:int)
+        return (e + f) * 5;
+    end;
+
+    method myMeth6(e:int, f:int)
+        return (x + y) * z;
+    end;
+end;
+
+class myClass3 implements myInt1 myInt2:
+    method myMeth2(x: int, y: int)
+        return y + (((x and y) - x) * y);
+    end;
+
+    method myMeth5(x: int, y: int)
+        return (((15+5)*3)-8)<100;
+    end;
+
+    method myMeth6(x: int, y: int)
+        return not not y;
+    end;
+end;

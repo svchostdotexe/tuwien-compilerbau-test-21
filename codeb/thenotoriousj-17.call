@@ -1,0 +1,16 @@
+struct objectc { 
+	struct vft *vftc;
+};
+
+extern struct vft { 
+	long (*max1)(struct objectc *, long, long);
+	long (*max2)(struct objectc *, long, long);
+	long (*max3)(struct objectc *, long, long);
+	long (*gcd)(struct objectc *, long, long);
+} Class1;
+
+RET(Class1.max1(0, 0, 0) == 0 && Class1.max1(0, 64, -28) == 64 && Class1.max1(0, 0xABCD, 0xDEAD) == 0xDEAD &&
+	Class1.max2(0, 0, 0) == 0 && Class1.max2(0, 64, -28) == 64 && Class1.max2(0, 0xABCD, 0xDEAD) == 0xDEAD &&
+	Class1.max3(0, 0, 0) == 0 && Class1.max3(0, 64, -28) == 64 && Class1.max3(0, 0xABCD, 0xDEAD) == 0xDEAD &&
+
+	Class1.gcd(0, 1221, 15) == 3 && Class1.gcd(0, 9451565168, 1651321192) == 8);
