@@ -1,0 +1,20 @@
+interface Interface1:
+	fib(int) : int
+end;
+
+class Class1 implements Interface1:
+	method fib(i: int)
+		var x0 : int := 0;
+		var x1 : int := 1;
+		
+		while 0 < i do
+			var tmp : int := x0;
+			x0 := x1;
+			x1 := x1 + tmp;
+			
+			i := i - 1;
+		end;
+		
+		return x1;
+	end;
+end;

@@ -1,0 +1,19 @@
+struct objectc { 
+	struct vft *vftc;
+};
+
+struct objectClass1 { 
+	struct vft *vftc;
+	long var1;
+	long var2;
+};
+
+extern struct vft { 
+	long (*calc)(struct objectc *, long, long);
+} Class1;
+
+struct objectClass1 *classobj = (struct objectClass1 *)malloc(sizeof(struct objectClass1));
+classobj -> vftc = &Class1;
+
+RET(Class1.calc(classobj, -27, 64) == 23280651 && Class1.calc(classobj, 255, -95) == 5483402244 && 
+	Class1.calc(classobj, 0, 0) == -1 && Class1.calc(classobj, -65, -69) == 80748260);

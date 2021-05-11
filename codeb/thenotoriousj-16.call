@@ -1,0 +1,23 @@
+struct objectc { 
+	struct vft *vftc;
+};
+
+struct objectClass1 { 
+	struct vft *vftc;
+	long var1;
+	long var2;
+	long var3;
+	long var4;
+};
+
+extern struct vft { 
+	long (*init)(struct objectc *);
+	long (*calc)(struct objectc *, long);
+} Class1;
+
+struct objectClass1 *classobj = (struct objectClass1 *)malloc(sizeof(struct objectClass1));
+classobj -> vftc = &Class1;
+
+RET(Class1.init(classobj) == 136 &&
+
+	Class1.calc(classobj, -27) == -14 && Class1.calc(classobj, 255) == 268);

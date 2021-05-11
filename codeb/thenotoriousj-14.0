@@ -1,0 +1,53 @@
+interface Interface1:
+	bitcount(int) : int
+end;
+
+interface Interface2: 
+	init() : int
+	factorial(int) : int
+end;
+
+class Class1 implements Interface1 :
+
+	/* Counting set bits, Kernighan's way */
+	method bitcount(i : int)
+		var c : int := 0;
+		while not (i = 0) do
+			i := i and (i - 1);
+			c := c + 1;
+		end;
+		
+		return c;
+	end;
+end;
+
+/*Highly efficient version of factorial, for use in commercial code contact me*/
+class Cacher implements Interface2 :
+	var lastN : int;
+	var lastResult : int;
+	
+	method init()
+		lastN := 0;
+		lastResult := 0;
+		return 0;
+	end;
+	
+	method factorial(n: int)
+		var temp : int := 2 - 1;
+		
+		if n = lastN then
+			return lastResult;
+		else 
+			lastN := n;
+		end;
+		
+		while 1 < n do
+			temp := temp * n;
+			n := n - 1;
+		end;
+		
+		lastResult := temp;
+		
+		return temp;
+	end;
+end;

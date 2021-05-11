@@ -1,0 +1,40 @@
+interface Interface1:
+	nestedVariables(int, int) : int 
+	nestedControl(int, int) : int
+end;
+
+class Class1 implements Interface1 :
+	method nestedVariables(a: int, b: int)
+		var sum : int := a + b;
+		if 0 < a then
+			var nested1 : int := sum + a;
+			sum := sum + nested1;
+		else 
+			var nested2 : int := sum - a;
+			sum := sum + nested2;
+		end;
+		
+		return sum;
+	end;
+	
+	/* a computer plays the guessing game in intervall [-1000, 1000]*/
+	method nestedControl(a: int, b: int)
+		var guess1 : int := 0-1000;
+		while guess1 < 1001 do
+			if guess1 = a then
+				var guess2 : int := 0-1000;
+				while guess2 < 1001 do
+					if guess2 = b then
+						return 1; /* FOUND IT, CALL ME HACKERMAN */
+					else
+						guess2 := guess2 + 1;
+					end;
+				end;
+			end;
+			
+			guess1 := guess1 + 1;
+		end;
+		
+		return 0; /* BETTER STICK TO UNO */
+	end;
+end;

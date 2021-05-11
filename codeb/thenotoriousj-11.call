@@ -1,0 +1,41 @@
+struct objectc { 
+	struct vft *vftc;
+};
+
+struct objectClass1 { 
+	struct vft *vftc;
+	long v1;
+	long v2;
+	struct objectc* var3;
+};
+
+struct objectClass2 { 
+	struct vft *vftc;
+};
+
+extern struct vft { 
+	long (*binaryOr)(struct objectc *, long, long);
+	long (*squareSum)(struct objectc *, long, long);
+	long (*lessOrEqual)(struct objectc *, long, long);
+	long (*determinant)(struct objectc *, long, long, long, long);
+	long (*offsetThisBy64)(struct objectc *);
+	struct objectc* (*getNull)(struct objectc *);
+} Class1, Class2;
+
+long a = 0xABCD;
+long b = 0xDEAD;
+long res = a*a+b*b;
+
+RET(Class1.binaryOr(0, 0xABCD, 0xDEAD) == (0xABCD | 0xDEAD) && Class1.binaryOr(0, 0xABCD, 0xABCD) == 0xABCD && 
+	Class1.binaryOr(0, 0, 0) == 0 && Class1.binaryOr(0, 4, 2) == 6 &&
+	Class1.squareSum(0, 3, 4) == 25 && Class1.squareSum(0, a, a) == 2*a*a &&
+	Class1.squareSum(0, 0, 0) == 0 && Class1.squareSum(0, a, b) == res &&
+
+	Class1.lessOrEqual(0, 3, 4) == -1 && Class1.lessOrEqual(0, 4, 5) == -1 &&
+	Class1.lessOrEqual(0, 0, 0) == -1 && Class1.lessOrEqual(0, 2, -2) == 0 &&
+
+	Class1.determinant(0, 3, 4, 5, 6) == -2 && Class1.determinant(0, 12, 5, 1, 8) == 91 &&
+	Class1.determinant(0, 0, 0, 0, 0) == 0 && Class1.determinant(0, 2, -2, 6, -5) == 2 &&
+
+	Class2.offsetThisBy64(0) == 64 && Class2.offsetThisBy64(-3)==61 && Class2.offsetThisBy64(5)==69 &&
+	Class2.getNull(64) == 0 && Class2.getNull(-3)==0 && Class2.getNull(5)==0);

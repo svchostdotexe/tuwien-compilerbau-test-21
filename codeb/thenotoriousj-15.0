@@ -1,0 +1,16 @@
+interface Interface1:
+	calc(int, int) : int
+end;
+
+class Class1 implements /* nothing */ :
+	var var1 : int;
+	var var2 : int;
+	
+	method calc(a: int, b: int)
+		var c2 : int := (a*a) + (b*b);
+		var c4 : int  := c2 * c2;
+		var c5 : int:= c4 - 1;
+		
+		return c5 - a;
+	end;
+end;
