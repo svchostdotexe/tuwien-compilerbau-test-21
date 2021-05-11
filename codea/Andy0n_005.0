@@ -1,0 +1,45 @@
+interface TestcaseInt1:
+    f(): int
+    g(int, int, int): int
+end;
+
+interface TestcaseInt2:
+    h(int, int, int): int
+    i(int, int, int): int
+    j(int, int, int): int
+end;
+
+class TestClass1 implements TestcaseInt1:
+    method f()
+        return 5+5+(10*3*(7-29)*112);
+    end;
+
+    method g(x: int, y: int, z: int)
+        return 3 and 1 and ((x-y) < (y-z));
+    end;
+end;
+
+class TestClass2 implements TestcaseInt1 TestcaseInt2:
+    var objVar1: int;
+    var objVar2: int;
+
+    method f()
+        return (7*12*13) < (100-57);
+    end;
+
+    method g(x: int, y: int, z: int)
+        return (x < y) + z;
+    end;
+
+    method h(x: int, y: int, z: int)
+        return (objVar1 + objVar2) < z;
+    end;
+
+    method i(x: int, y: int, z: int)
+        return objVar1 * 0DEADH * 0BEEFH;
+    end;
+
+    method j(x: int, y: int, z: int)
+        return z + ((objVar1 + x) and (objVar2 + y)) + 5;
+    end;
+end;

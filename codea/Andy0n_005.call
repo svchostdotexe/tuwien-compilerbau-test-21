@@ -1,0 +1,51 @@
+struct objectc { 
+    struct vft *vftc; 
+    long objVar1;
+    long objVar2;
+};
+
+extern struct ct { 
+    long (*f)(struct objectc*);
+    long (*g)(struct objectc*, long, long, long);
+    long (*h)(struct objectc*, long, long, long);
+    long (*i)(struct objectc*, long, long, long);
+    long (*j)(struct objectc*, long, long, long);
+} TestClass1, TestClass2;
+
+struct objectc *TestObj = (struct objectc *)malloc(sizeof(struct objectc));
+TestObj->objVar1= 2147483647;
+TestObj->objVar2 = -2147483648;
+
+#define F1(o) (5+5+(10*3*(7-29)*112))
+#define G1(o,x,y,z) (3&1&((x-y)<(y-z)))
+
+#define F2(o) (-1*((7*12*13)<(100-57)))
+#define G2(o,x,y,z) (-1*(x<y)+z)
+#define H2(o,x,y,z) (-1*((TestObj->objVar1 + TestObj->objVar2) < z))
+#define I2(o,x,y,z) (TestObj->objVar1 * 0xDEAD * 0xBEEF)
+#define J2(o,x,y,z) (z + ((TestObj->objVar1 + x) & (TestObj->objVar2 + y)) + 5)
+
+
+RET(
+    TestClass1.f(0) == F1(0)  &&
+    TestClass2.f(0) == F2(0)  &&
+
+    TestClass1.g(0, 1, 10, 1) == G1(0, 1, 10, 1) &&
+    TestClass1.g(0, 0, 0, 0) == G1(0, 0, 0, 0) &&
+    TestClass1.g(0, 1, 1, 10) == G1(0, 1, 1, 10) &&
+
+    TestClass2.g(0, 1, 5, 10) == G2(0, 1, 5, 10) &&
+    TestClass2.g(0, 5, 1, 10) == G2(0, 5, 1, 10) &&
+    
+    TestClass2.h(TestObj, 0, 0, 27) == H2(0, 0, 0, 27) &&
+    TestClass2.h(TestObj, 0, 0, 0) == H2(0, 0, 0, 0) &&
+    TestClass2.h(TestObj, 0, 0, -27) == H2(0, 0, 0, -27) &&
+
+    TestClass2.i(TestObj, 0, 0, 0) == I2(0, 0, 0, 0) &&
+
+    TestClass2.j(TestObj, 0, 0, 0) == J2(0, 0, 0, 0) &&
+    TestClass2.j(TestObj, 10, 10, 10) == J2(0, 10, 10, 10) &&
+    TestClass2.j(TestObj, -10, -10, -10) == J2(0, -10, -10, -10) &&
+    TestClass2.j(TestObj, 27, -69, 420) == J2(0, 27, -69, 420)
+
+);

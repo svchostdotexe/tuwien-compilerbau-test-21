@@ -1,0 +1,24 @@
+interface AndInt:
+    f(int, int): int
+    g(int, int): int
+    h(int, int): int
+    i(int, int): int
+end;
+
+class AndClass implements AndInt:
+    method f(a: int, b: int)
+        return (a+b) and (a+b);
+    end;
+
+    method g(a: int, b: int)
+        return (a+b) and a;
+    end;
+
+    method h(a: int, b: int)
+        return (a+b) and 27;
+    end;
+
+    method i(a: int, b: int)
+        return 27 and (a+b);
+    end;
+end;
