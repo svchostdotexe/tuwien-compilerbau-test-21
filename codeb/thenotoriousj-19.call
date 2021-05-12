@@ -1,0 +1,21 @@
+struct objectc { 
+	struct vft *vftc;
+	long num;
+};
+
+extern struct vft { 
+	long (*set)(struct objectc *, long);
+	long (*get)(struct objectc *);
+	struct objectc* (*construct)(struct objectc *);
+} Class1;
+
+struct objectc *obj = malloc(sizeof(struct objectc));
+obj->vftc = &Class1;
+obj->num = 3;
+
+/* heapptr comes from the framework, could be unstable if prof changes it*/
+long *reg15 = heapptr;
+struct objectc *constructed = (struct objectc *) heapptr;
+
+RET(Class1.get(obj) == 3 && Class1.set(obj, 1) == 0 && Class1.get(obj) == 1 &&
+	Class1.construct(obj) == reg15 && heapptr - reg15 == 2 && constructed->vftc == &Class1);

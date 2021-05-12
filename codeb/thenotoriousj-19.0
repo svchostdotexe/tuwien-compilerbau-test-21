@@ -1,0 +1,22 @@
+interface Interface1:
+	set(int) : int
+	get() : int
+	construct() : Interface1
+end;
+
+class Class1 implements Interface1:
+	var num : int;
+	
+	method set(a : int)
+		num := a;
+		return 0;
+	end;
+	
+	method get()
+		return num;
+	end;
+	
+	method construct()
+		return new Class1;
+	end;
+end;
