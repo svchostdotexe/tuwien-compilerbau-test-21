@@ -1,0 +1,7 @@
+interface Interface1:
+	add(int,int):int
+end;
+
+interface Interface2:
+	add(int,Interface1):int
+end;

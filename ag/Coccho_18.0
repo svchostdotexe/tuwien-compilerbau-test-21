@@ -1,0 +1,11 @@
+interface compiler:
+    add() : int
+end;
+
+class class1 implements:
+    var num1 : int;
+    var num2 : int;
+    method add(param1 : int, param2 : int)
+        var result : compiler := 23;
+    end;
+end;

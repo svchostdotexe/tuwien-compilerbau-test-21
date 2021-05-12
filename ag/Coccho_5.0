@@ -1,0 +1,4 @@
+interface Interface1:
+    empty():int
+    oneParam(int):int
+end;

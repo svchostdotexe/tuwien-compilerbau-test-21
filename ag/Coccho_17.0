@@ -1,0 +1,10 @@
+interface interf:
+    noError() : int
+end;
+
+class class1 implements interf:
+    var num : int;
+    method noError()
+        this.noError();
+    end;
+end;
