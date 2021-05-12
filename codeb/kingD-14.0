@@ -1,0 +1,8 @@
+interface i: 
+    j(int,int):int 
+end;
+class c implements i:
+    method j(x:int,y:int) 
+        return x < y; 
+    end;
+end;
