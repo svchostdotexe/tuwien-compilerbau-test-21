@@ -1,0 +1,14 @@
+interface i:
+    a():int
+end;
+class b implements:
+    var hallo: int;
+    method a()
+        new x; /* FAIL */
+    end;
+end;
+class x implements:
+    var hallo: int;
+    method a()
+    end;
+end;

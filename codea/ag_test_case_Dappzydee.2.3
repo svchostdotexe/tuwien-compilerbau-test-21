@@ -1,0 +1,10 @@
+interface myInterface:
+    testMethod(): int
+end;
+
+class ObjectvariableClass implements myInterface:
+    method testMethod()
+        var tmp : int := 0;
+        tmp = testMethod; /* FAIL */
+    end;
+end;
