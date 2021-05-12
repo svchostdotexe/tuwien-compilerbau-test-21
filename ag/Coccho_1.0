@@ -1,0 +1,14 @@
+interface Interface1:
+	
+end;
+
+interface Interface2: 
+	empty():int
+	single():int
+	add2(int, int) : int
+end;
+
+class Class1 implements Interface1 :
+	var var1 : int;
+	var var2 : int;
+end;
