@@ -1,0 +1,30 @@
+interface Interf0 :
+end;
+
+interface Interf1:
+    initialize(): int
+    testNonsensicalStuff(int): Interf0
+end;
+
+class Somename implements Interf0 :
+end;
+
+class OtherName implements Interf1 :
+    var count : int;
+    method initialize()
+        count := 15;
+    end;
+    method testNonsensicalStuff(par : int)   
+        if not this then
+            while (par < 25) do
+                count := count * 5;
+                if null Interf0 then
+                    count := count * 5;
+                else 
+                    return new Interf1;
+                    /* should throw an error here */
+                end;
+            end;
+        end;
+    end;
+end;
