@@ -1,0 +1,12 @@
+interface myInterface:
+    testMethod(): int
+end;
+
+class ObjectvariableClass implements myInterface:
+    var global:int;
+
+    method testMethod()
+        var global:int := 5; /* FAIL */
+        return global;
+    end;
+end;

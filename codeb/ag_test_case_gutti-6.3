@@ -1,0 +1,11 @@
+class Foo implements Bar: /*Bar ist noch nicht sichtbar*/
+    var x: Bar;
+    method nochNichtSichtbar(x:int,bar:Bar)
+        not 42;
+    end;
+end;
+
+interface Bar:
+    nochNichtSichtbar(int,Bar):Bar
+end;
+

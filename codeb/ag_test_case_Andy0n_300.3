@@ -1,0 +1,9 @@
+interface myInterface:
+    testMethod(): int
+end;
+
+class ObjectvariableClass implements myInterface:
+    method testMethod()
+        return global; /* FAIL */
+    end;
+end;
