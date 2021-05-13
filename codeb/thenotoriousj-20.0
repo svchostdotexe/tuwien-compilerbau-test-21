@@ -1,0 +1,71 @@
+interface Interface1:
+	add1(int) : int
+	add2(int) : int
+	add3(int) : int
+	add4(int) : int
+	mul(int) : int
+	equal(int) : int
+	sub1(int) : int
+	sub2(int) : int
+	less1(int) : int
+	less2(int) : int
+	constant() : int
+end;
+
+interface Interface2:
+	getVar() : int
+	getObjVar() : int
+end;
+
+class Class2 implements Interface2:
+	var obj : int;
+	
+	method getVar()
+		var x : int := 0DEADH * 0BEEFH;
+		return x;
+	end;
+	method getObjVar()
+		obj := 0DEADH * 0BEEFH;
+		return obj;
+	end;
+end;
+
+class Class1 implements Interface1 :
+	method add1(in1: int)
+		return (2147483648-1)+in1;
+	end;
+	method add2(in1: int)
+		return 2147483648+in1;
+	end;
+	method add3(in1: int)
+		return (0-2147483648)+in1;
+	end;
+	method add4(in1: int)
+		return ((0-2147483648)-1)+in1;
+	end;
+	method mul(a: int)
+		return a*0DEADH * 0BEEFH;
+	end;
+	
+	method equal(a: int)
+		return a = (0DEADH * 0BEEFH);
+	end;
+	
+	method sub1(in1: int)
+		return in1 - (0DEADH * 0BEEFH);
+	end;
+	method sub2(in1: int)
+		return (0DEADH * 0BEEFH) - in1;
+	end;
+	
+	method less1(in1: int)
+		return in1 < (0DEADH * 0BEEFH);
+	end;
+	method less2(in1: int)
+		return (0DEADH * 0BEEFH) < in1;
+	end;
+	
+	method constant()
+		return 0DEADH * 0BEEFH;
+	end;
+end;
