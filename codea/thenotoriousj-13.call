@@ -1,0 +1,53 @@
+struct objectc { 
+	struct vft *vftc;
+};
+
+extern struct vft { 
+	long (*add1)(struct objectc *, long);
+	long (*add2)(struct objectc *, long);
+	long (*add3)(struct objectc *, long);
+	long (*add4)(struct objectc *, long);
+	long (*mul)(struct objectc *, long);
+	long (*equal)(struct objectc *, long);
+	long (*sub1)(struct objectc *, long);
+	long (*sub2)(struct objectc *, long);
+	long (*less1)(struct objectc *, long);
+	long (*less2)(struct objectc *, long);
+	long (*constant)(struct objectc *);
+} Class1;
+
+long maxVal = 2147483648;
+long dead = 0xDEAD;
+long beef = 0xBEEF;
+
+RET(Class1.add1(0, 0xABCD) == maxVal-1 + 0xABCD &&
+	Class1.add1(0, 0) == maxVal-1 &&
+
+	Class1.add2(0, 0xABCD) == maxVal + 0xABCD &&
+	Class1.add2(0, 0) == maxVal &&
+	
+	Class1.add3(0, 0xABCD) == -maxVal + 0xABCD &&
+	Class1.add3(0, 0) == -maxVal &&
+	
+	Class1.add4(0, 0xABCD) == -maxVal-1 + 0xABCD &&
+	Class1.add4(0, 0) == -maxVal-1 &&
+	
+	Class1.mul(0, 0xABCD) == dead*beef*0xABCD && Class1.mul(0, 2) == 2*dead*beef && 
+	Class1.mul(0, 1) == dead*beef &&
+	
+	Class1.equal(0, -5) == 0 && Class1.equal(0, dead*beef) == -1 && 
+	Class1.equal(0, dead*beef*2) == 0 &&
+	
+	Class1.sub1(0, -5) == -5 - dead*beef && Class1.sub1(0, dead*beef) == 0 && 
+	Class1.sub1(0, dead*beef*2) == dead*beef &&
+
+	Class1.sub2(0, -5) == dead*beef + 5 && Class1.sub2(0, dead*beef) == 0 && 
+	Class1.sub2(0, dead*beef*2) == -(dead*beef) &&
+	
+	Class1.less1(0, -5) == -1 && Class1.less1(0, dead*beef) == 0 && 
+	Class1.less1(0, dead*beef*2) == 0 &&
+
+	Class1.less2(0, -5) == 0 && Class1.less2(0, dead*beef) == 0 && 
+	Class1.less2(0, dead*beef*2) == -1 &&
+	
+	Class1.constant(0) == dead*beef);
