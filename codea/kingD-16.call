@@ -1,0 +1,22 @@
+struct objectc { 
+    struct vft *vftc; 
+    long objVar1;
+    long objVar2;
+};
+
+extern struct ct { 
+    long (*i)(struct objectc*, long, long, long);
+    
+} TestClass2;
+
+struct objectc *TestObj = (struct objectc *)malloc(sizeof(struct objectc));
+TestObj->objVar1= 2147483647;
+TestObj->objVar2 = -2147483648;
+
+#define I2(o,x,y,z) (TestObj->objVar1 * 0xDEAD * 0xBEEF)
+
+
+RET(
+
+    TestClass2.i(TestObj, 0, 0, 0) == I2(0, 0, 0, 0)
+);
