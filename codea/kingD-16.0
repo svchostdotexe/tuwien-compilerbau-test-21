@@ -1,0 +1,14 @@
+interface TestcaseInt2:
+    i(int, int, int): int
+end;
+
+class TestClass2 implements TestcaseInt2:
+    var objVar1: int;
+    var objVar2: int;
+
+
+    method i(x: int, y: int, z: int)
+        return 0DEADH * 0BEEFH * objVar1;
+    end;
+
+end;
