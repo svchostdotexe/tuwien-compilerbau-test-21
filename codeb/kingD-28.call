@@ -1,0 +1,17 @@
+struct objectc { 
+    struct vft *vftc; 
+    long kingD1; 
+    long kingD2; 
+};
+
+extern struct vft { 
+    long (*h)(struct objectc *, long, long);
+} c;
+
+struct objectc *myObj = (struct objectc *)malloc(sizeof(struct objectc));
+myObj->kingD1 = 69;
+myObj->kingD2 = 99;
+
+RET(
+    c.h(myObj,50,18) == myObj->kingD2
+);
