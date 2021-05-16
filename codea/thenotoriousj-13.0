@@ -14,16 +14,16 @@ end;
 
 class Class1 implements Interface1 :
 	method add1(in1: int)
-		return (2147483648-1)+in1;
+		return ((1+2147483647)-1)+in1;
 	end;
 	method add2(in1: int)
-		return 2147483648+in1;
+		return in1+2147483647+1;
 	end;
 	method add3(in1: int)
-		return (0-2147483648)+in1;
+		return ((0-2147483647)-1)+in1;
 	end;
 	method add4(in1: int)
-		return ((0-2147483648)-1)+in1;
+		return (((0-2147483647)-1)-1)+in1;
 	end;
 	method mul(a: int)
 		return a*0DEADH * 0BEEFH;
