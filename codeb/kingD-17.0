@@ -1,0 +1,12 @@
+interface i: 
+    h(int,int):int 
+end;
+class c implements i:
+    var kingD1 : int;
+    var kingD2 : int;
+
+    method h(x:int,y:int) 
+        var v1 : int := 5;
+        return v1;
+    end;
+end;
