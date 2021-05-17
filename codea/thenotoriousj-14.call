@@ -1,0 +1,12 @@
+struct objectc { 
+	struct vft *vftc;
+};
+
+extern struct vft { 
+	long (*addLimit)(struct objectc *, long, long, long, long, long);
+} Class1;
+
+RET(Class1.addLimit(0, 0xABCD, 1, 2, 3, 4) == 0xABCD + 10 &&
+	Class1.addLimit(0, 0xABCD, 0xDEAD, 0xBEEF, 3, 4) == 0xABCD + 0xDEAD + 0xBEEF + 7 &&
+	Class1.addLimit(0, 0, 1, 2, 3, 4) == 10
+	);

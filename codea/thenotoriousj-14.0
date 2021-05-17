@@ -1,0 +1,9 @@
+interface Interface1:
+	addLimit(int,int,int,int,int) : int
+end;
+
+class Class1 implements Interface1 :
+	method addLimit(a: int, b:int, c:int, d:int, e:int)
+		return a+b+c+d+e;
+	end;
+end;
