@@ -1,0 +1,12 @@
+interface ISimpleMemRefTest:
+    cmp():int
+end;
+
+class SimpleMemRefTest implements ISimpleMemRefTest:
+    var objVar1 : int;
+    var objVar2 : int;
+
+    method cmp()
+        return objVar1 = objVar2;
+    end;
+end;
