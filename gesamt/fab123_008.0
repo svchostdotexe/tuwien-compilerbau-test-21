@@ -1,0 +1,32 @@
+interface i:
+	f1(int): int
+	f2(int): int
+	f3():int
+end;
+
+class d implements i:
+	var a : int;
+	method f1(aa: int)
+		var b : d := new d;
+		b.f2(aa);
+		return b;
+	end;
+
+	method f2(aa: int)
+		a := aa;
+	end;
+
+	method f3()
+		return a;
+	end;
+end;
+
+class c implements i:	
+
+	method f1(aa: int)
+		var obj: d := new d;
+		var newobj : d := obj.f1(aa);
+		return newobj.f3();
+	end;
+end;
+

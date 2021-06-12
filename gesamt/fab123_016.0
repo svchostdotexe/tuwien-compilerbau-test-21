@@ -1,0 +1,23 @@
+interface i:
+	func(int): int
+end;
+
+class fibbo implements i:
+	method func(aa: int)
+		if aa < 3 then
+			return 1;
+		end;
+		var a : int := this.func(aa - 1);
+		var b : int := this.func(aa-2);
+		return a + b;
+	end;
+end;
+
+class c implements i:
+	var a : fibbo;
+	method func(aa: int)
+		a := new fibbo;
+		return a.func(aa);
+	end;
+end;
+

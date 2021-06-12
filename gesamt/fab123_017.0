@@ -1,0 +1,25 @@
+interface i:
+	func(int): int
+	sum(int, int): int
+end;
+
+class d implements i:
+	method func(aa: int)
+		return aa + 1;
+	end;
+	method sum(aa: int, bb: int)
+		return aa + bb;
+	end;
+end;
+
+class c implements i:
+	var a : d;
+	method sum(aa: int, bb: int)
+		return aa + bb;
+	end;
+	method func(aa: int)
+		a := new d;
+		return a.sum(a.func(aa), a.func(aa)); /* aa + 1 + aa + 1*/
+	end;
+end;
+
