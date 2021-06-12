@@ -1,0 +1,9 @@
+interface i: 
+    f(int,int):int 
+end;
+class c implements i:
+    var kingD : int;
+    method f(x:int,y:int) 
+        return kingD; 
+    end;
+end;

@@ -11,7 +11,7 @@ end;
 class c implements i:	
 
 	method func(aa: int)
-		var b : d:=new d;	
+		var b : i :=new d;	
 		var a : int := 12;	
 		var av : int := 13;	
 		return   a + ((0-av)+  b.func(aa)); 

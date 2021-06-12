@@ -7,6 +7,7 @@ class d implements i:
 	var a : int;
 	method f1(aa: int)
 		a:= aa;
+		return 0;
 	end;
 
 	method f2()
@@ -15,11 +16,11 @@ class d implements i:
 end;
 
 class c implements i:	
-	var b : d; 
+	var b : i; 
 
 	method f1(aa: int)
 		b:=new d;	
-		var a : int := b.f1(aa);
+		b.f1(aa);
 		return   2 * b.f2(); 
 	end;
 end;

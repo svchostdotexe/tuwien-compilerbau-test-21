@@ -7,7 +7,7 @@ end;
 class d implements i:
 	var a : int;
 	method f1(aa: int)
-		var b : d := new d;
+		var b : i := new d;
 		b.f2(aa);
 		return b;
 	end;

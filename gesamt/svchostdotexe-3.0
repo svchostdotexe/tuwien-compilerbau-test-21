@@ -1,0 +1,10 @@
+interface i:
+    h(int):int
+end;
+class c implements i:
+    method h(x:int)
+    	if (0-1) then return 2;
+    	end;
+    	return 3;
+    end;
+end;

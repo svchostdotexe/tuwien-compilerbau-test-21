@@ -1,0 +1,15 @@
+interface i: 
+    h(int,int):int 
+end;
+class c implements i:
+    var kingD1 : int;
+    var kingD2 : int;
+
+    method h(x:int,y:int) 
+        /* switching kingD1 with kingD2 */
+        var helper : int := kingD1;
+        kingD1 := kingD2;
+        kingD2 := helper;
+        return helper;
+    end;
+end;

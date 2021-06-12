@@ -7,13 +7,14 @@ end;
 class d implements i:
 	var a : int;
 	method f1(aa: int)
-		var b : d := new d;
+		var b : i := new d;
 		b.f2(aa);
 		return b;
 	end;
 
 	method f2(aa: int)
 		a := aa;
+		return 0;
 	end;
 
 	method f3()
@@ -22,10 +23,9 @@ class d implements i:
 end;
 
 class c implements i:	
-
 	method f1(aa: int)
-		var obj: d := new d;
-		var newobj : d := obj.f1(aa);
+		var obj: i := new d;
+		var newobj : i := obj.f1(aa);
 		return newobj.f3();
 	end;
 end;

@@ -1,0 +1,17 @@
+interface i: 
+    h(int,int):int 
+end;
+class c implements i:
+    var kingD1 : int;
+    var kingD2 : int;
+
+    method h(x:int,y:int) 
+
+        if 2<x then 
+            x := 1;
+        end;
+
+        return x;
+        
+    end;
+end;

@@ -10,7 +10,7 @@ end;
 
 class c implements i:	
 
-		var b : d; 
+		var b : i; 
 	method func(aa: int)
 		b:=new d;	
 		var a : int := aa;	

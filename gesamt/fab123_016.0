@@ -14,7 +14,7 @@ class fibbo implements i:
 end;
 
 class c implements i:
-	var a : fibbo;
+	var a : i;
 	method func(aa: int)
 		a := new fibbo;
 		return a.func(aa);

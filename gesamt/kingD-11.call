@@ -1,0 +1,8 @@
+struct objectc { struct vft *vftc; };
+extern struct vft { 
+    long (*f)(struct objectc *, long); 
+    long (*g)(struct objectc *, long); 
+    long (*h)(struct objectc *, long, long);
+    long (*j)(struct objectc *, long, long);
+} c;
+RET(c.f(0,3) == 0);

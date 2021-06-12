@@ -13,7 +13,7 @@ class d implements i:
 end;
 
 class c implements i:
-	var a : d;
+	var a : i;
 	method sum(aa: int, bb: int)
 		return aa + bb;
 	end;
