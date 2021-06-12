@@ -1,0 +1,20 @@
+struct objectSMRT {
+    struct vftSMRT *vftSMRT;
+    long objVar1;
+    long objVar2;
+};
+
+extern struct vftSMRT {
+    long (*cmp)(struct objectSMRT *);
+} SimpleMemRefTest;
+
+struct objectSMRT *myObj = malloc(sizeof *myObj);
+myObj->objVar1 = 5;
+myObj->objVar2 = 5;
+
+/* 
+actually we just want to check that
+not both arguments of assembly cmp are memory references
+e.g. "cmpq 8(%rdi), 16(%rdi)" is not allowed (no valid asm)
+*/
+RET(SimpleMemRefTest.cmp(myObj) == -1);

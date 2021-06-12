@@ -21,7 +21,7 @@ class c implements i:
 	end;
 
 	method f1(aa: int)
-		var obj: d := new d;
+		var obj: i := new d;
 		return (4 * obj.f1(aa));
 	end;
 end;

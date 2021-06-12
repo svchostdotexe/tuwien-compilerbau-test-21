@@ -1,0 +1,11 @@
+interface i: 
+    f(int,int):int 
+end;
+class c implements i:
+    var kingD : int;
+    var giveMe : int;
+
+    method f(x:int,y:int) 
+        return (kingD * x) + giveMe + 60; 
+    end;
+end;

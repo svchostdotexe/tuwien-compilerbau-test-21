@@ -1,0 +1,18 @@
+interface i: 
+    h(int,int):int 
+end;
+class c implements i:
+    var kingD1 : int;
+    var kingD2 : int;
+
+    method h(x:int,y:int) 
+        var counter: int := 0;
+
+        while 0<x do
+            counter := counter + 1;
+            x := x - 1;
+        end;
+        
+        return counter;
+    end;
+end;

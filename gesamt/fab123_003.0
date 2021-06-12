@@ -10,7 +10,7 @@ class d implements i:
 end;
 
 class c implements i:	
-	var b : d; 
+	var b : i; 
 
 	method f2(aa: int)
 		return aa + 1;
