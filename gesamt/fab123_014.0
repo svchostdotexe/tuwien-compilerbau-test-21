@@ -1,0 +1,18 @@
+interface i:
+	func(int): int
+end;
+
+class d implements i:
+	method func(aa: int)
+		return aa + 1;
+	end;
+end;
+
+class c implements i:
+	method func(aa: int)
+		var a : int := 5;
+		var obj : d := new d;
+		var b : int := obj.func(1 +(3 * 1) + 1 + 1);
+		return a = b;
+	end;
+end;

@@ -1,0 +1,3 @@
+struct objectc { struct vft *vftc; };
+extern struct vft { long (*func)(struct objectc *, long); } c;
+RET(c.func(malloc(100),6) == 7 && c.func(malloc(100),-1)==0);

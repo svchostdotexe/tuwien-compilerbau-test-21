@@ -1,0 +1,25 @@
+interface i:
+	f1(int): int
+	f2(int): int
+end;
+
+class d implements i:
+	method f2(aa: int)
+		return aa + 1;
+	end;
+end;
+
+class c implements i:	
+	var b : d; 
+
+	method f2(aa: int)
+		return aa + 1;
+	end;
+
+	method f1(aa: int)
+		b:=new d;	
+		var five : int := b.f2(4); 
+		return aa + five;
+	end;
+end;
+

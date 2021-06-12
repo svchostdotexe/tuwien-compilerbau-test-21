@@ -1,0 +1,20 @@
+interface i:
+	func(int): int
+end;
+
+class d implements i:
+	method func(aa: int)
+		return aa + 1;
+	end;
+end;
+
+class c implements i:	
+
+	method func(aa: int)
+		var b : d:=new d;	
+		var a : int := 12;	
+		var av : int := 13;	
+		return   a + ((0-av)+  b.func(aa)); 
+	end;
+end;
+
